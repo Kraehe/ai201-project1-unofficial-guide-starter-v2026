@@ -21,11 +21,7 @@
 
 ## What This Does
 
-<!-- Three or four sentences. Which corpus you picked, and the kinds of
-     questions your system answers. Write it for someone who has never seen
-     this repo.
-
-     Milestone 5. -->
+     This system is designed to answer questions about student life and academic support, using a corpus of advice threads from a university's online forums. It can answer questions about topics such as internships, transfer credits, office hours, clubs, and more, providing relevant advice and citing sources from the corpus, which is a collection of threads containing student questions and responses from peers and advisors. By leveraging the information in these threads, the system aims to provide accurate and helpful guidance to students seeking advice on various aspects of their academic journey.
 
 ## Chunking Strategy
 
@@ -184,9 +180,12 @@ changing `top-k`.
 
      Milestone 5. -->
 
-**1.**
+**1.** 
+I tried to use Copilot to help me write the chunking function, but it lost the nuance of the overlap and produced chunks that were just isolated replies from the original text. I had to adjust the function to ensure that each chunk contained a complete thread.
 
-**2.**
+**2.** 
+I used Claude to help me verify what kind of criterion I wanted to use for the source verification. I asked it to suggest different kinds of measurable criterion, and it suggested that there was a difference between a source being provided and a source being reliable. I agreed with this suggestion and used it as my criterion.
+
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
