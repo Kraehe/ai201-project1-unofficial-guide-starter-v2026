@@ -29,8 +29,14 @@
 
 ## Chunking Strategy
 
-**Chunk size:**
-**Overlap:**
+**Chunk size:** one complete thread, usually about 325–810 characters
+**Overlap:** 0 characters
+
+I chose one complete thread per chunk because each advice_threads document
+contains one student question followed by several short replies. Some replies
+are brief or only make sense when compared with the other replies. I tried to keep it limited to oone reply, but the context of the entire thread is often necessary to understand the advice. Keeping the
+whole thread together preserves that context and prevents useful advice from
+becoming an isolated fragment.
 
 <!-- What about YOUR documents made you pick these numbers? Short posts and
      long sectioned guides don't want the same chunking, and "800 seemed
@@ -53,59 +59,79 @@
 
      Milestone 3. -->
 
-======================================================================
-Chunk 1  |  source: board_game_card_list.txt#0  |  produced by: chunker.py::fallback_split
-======================================================================
-What's in the cargo deck
-
-Sixty cards across five cargo types: twelve each of timber, salt, wool, fish, and iron.
-
-The distribution is even, so counting what has already appeared is a legitimate and moderately effective strategy in the late game.
 
 ======================================================================
-Chunk 2  |  source: board_game_faq.txt#0  |  produced by: chunker.py::fallback_split
+Chunk 1  |  source: thread_bike_commute.txt#0  |  produced by: chunker.py::split_documents
 ======================================================================
-Questions that come up
+THREAD: Is a bike worth it for a 20 minute walk commute?
 
-Can I sell cargo at a port that doesn't accept it? Yes, for one coin instead of two.
+--- reply 1 (14 votes) ---
+Yeah. Cuts an 18 minute walk to about 6. The thing nobody mentions is storage — covered bike parking exists at three buildings and is full by 9am at all three.
 
-Can I discard a contract I can't finish? Yes, at the start of your turn, for one coin.
+--- reply 2 (9 votes) ---
+Counterpoint, I sold mine. Between November and March the paths are either icy or salted and salt destroys a drivetrain in one season.
 
-Can I hold four cargo cards? No. Three is the hold limit and it applies at all times, not just at the end of a turn.
+--- reply 3 (22 votes) ---
+Both true. I keep a cheap bike for September to November and walk the rest of the year. Total cost was about $120 for the bike and I don't care what happens to it.
 
-======================================================================
-Chunk 3  |  source: board_game_market.txt#0  |  produced by: chunker.py::fallback_split
-======================================================================
-The market row
-
-Four cargo cards sit face up. When one is taken, slide the others left and deal a new card to the rightmost slot.
-
-The leftmost card costs nothing to load. Each slot to the right costs one additional coin, so the rightmost card costs three.
+--- reply 4 (5 votes) ---
+If you do get one, the campus does free registration and it's the only reason I got mine back after it was taken.
 
 ======================================================================
-Chunk 4  |  source: board_game_scoring_example.txt#0  |  produced by: chunker.py::fallback_split
+Chunk 2  |  source: thread_first_gen.txt#0  |  produced by: chunker.py::split_documents
 ======================================================================
-A worked scoring example
+THREAD: Anything specific for first-generation students?
 
-At the end of a four-player game, one player finished with 9 coins, 2 completed contracts, and 1 unused crew token. That scores 9 for coins, 6 for contracts, and 2 for the crew — 17 points total.
+--- reply 1 (33 votes) ---
+The advising office has a specific programme and it is genuinely good, but it is opt-in and badly publicised. Ask for it by name.
 
-A second player had 3 coins, 4 contracts, and no crew: 3 plus 12 plus 0, which is 15. Coins rarely decide a game; contracts usually do.
+--- reply 2 (41 votes) ---
+The thing I'd say: the unwritten rules are the hard part, not the coursework. Ask about the unwritten rules explicitly. People are happy to explain them and nobody volunteers them.
+
+--- reply 3 (16 votes) ---
+Emergency fund for textbooks and travel exists and is not means-tested beyond a short form.
 
 ======================================================================
-Chunk 5  |  source: board_game_strategy_guide.txt#3  |  produced by: chunker.py::fallback_split
+Chunk 3  |  source: thread_laptop_specs.txt#0  |  produced by: chunker.py::split_documents
 ======================================================================
-ins rarely decide a game. If you are choosing between one more sale and one
-more delivery, deliver.
+THREAD: How much laptop do I actually need for CS courses?
 
-Playing against people who know this
+--- reply 1 (31 votes) ---
+Less than the recommended spec page says. 16GB of RAM is the one number worth paying for; everything else you'll never notice.
 
-Since the cargo distribution is even — twelve each of five types — counting what
-has already appeared is legitimate and moderately effective late on. Assume an
-experienced opponent is doing it, and assume they can see which contract you are
-setting up for from the types in your hold.
+--- reply 2 (18 votes) ---
+Adding: the lab machines exist and are better than anything you'll buy. For the heavy assignments people just use those.
 
-For each one, ask: could someone answer a question using only this,
-without reading what came before or after?
+--- reply 3 (12 votes) ---
+I did two years on an 8GB machine and it was fine until the last project, at which point it very much wasn't. 16 is the answer.
+
+======================================================================
+Chunk 4  |  source: thread_office_hours_etiquette.txt#0  |  produced by: chunker.py::split_documents
+======================================================================
+THREAD: Is it weird to go to office hours with no specific question?
+
+--- reply 1 (44 votes) ---
+No, and this is the single most common thing first years get wrong. 'I'm following the lectures but I don't feel like I understand the shape of it' is a completely normal thing to say.
+
+--- reply 2 (29 votes) ---
+They're usually empty. You are doing the instructor a favour by turning up.
+
+--- reply 3 (18 votes) ---
+If it helps, treat it as a standing appointment. Go every week for a month and it stops feeling like a thing.
+
+======================================================================
+Chunk 5  |  source: thread_professor_email.txt#0  |  produced by: chunker.py::split_documents
+======================================================================
+THREAD: Do professors actually answer email?
+
+--- reply 1 (21 votes) ---
+Varies enormously. General rule I've found: if the syllabus states a response window, it's honoured. If it doesn't, assume 48 hours and don't panic before then.
+
+--- reply 2 (33 votes) ---
+Office hours are dramatically more effective than email for anything that takes more than two sentences to answer. They're also usually empty.
+
+--- reply 3 (15 votes) ---
+Empty office hours is the biggest unused resource here and I say that having wasted a year not going.
 
 ## Sample Answer
 
