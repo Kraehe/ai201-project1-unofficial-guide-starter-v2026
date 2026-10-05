@@ -53,30 +53,59 @@
 
      Milestone 3. -->
 
-**Chunk 1** — source: `` — produced by: ``
+======================================================================
+Chunk 1  |  source: board_game_card_list.txt#0  |  produced by: chunker.py::fallback_split
+======================================================================
+What's in the cargo deck
 
-```
-```
+Sixty cards across five cargo types: twelve each of timber, salt, wool, fish, and iron.
 
-**Chunk 2** — source: `` — produced by: ``
+The distribution is even, so counting what has already appeared is a legitimate and moderately effective strategy in the late game.
 
-```
-```
+======================================================================
+Chunk 2  |  source: board_game_faq.txt#0  |  produced by: chunker.py::fallback_split
+======================================================================
+Questions that come up
 
-**Chunk 3** — source: `` — produced by: ``
+Can I sell cargo at a port that doesn't accept it? Yes, for one coin instead of two.
 
-```
-```
+Can I discard a contract I can't finish? Yes, at the start of your turn, for one coin.
 
-**Chunk 4** — source: `` — produced by: ``
+Can I hold four cargo cards? No. Three is the hold limit and it applies at all times, not just at the end of a turn.
 
-```
-```
+======================================================================
+Chunk 3  |  source: board_game_market.txt#0  |  produced by: chunker.py::fallback_split
+======================================================================
+The market row
 
-**Chunk 5** — source: `` — produced by: ``
+Four cargo cards sit face up. When one is taken, slide the others left and deal a new card to the rightmost slot.
 
-```
-```
+The leftmost card costs nothing to load. Each slot to the right costs one additional coin, so the rightmost card costs three.
+
+======================================================================
+Chunk 4  |  source: board_game_scoring_example.txt#0  |  produced by: chunker.py::fallback_split
+======================================================================
+A worked scoring example
+
+At the end of a four-player game, one player finished with 9 coins, 2 completed contracts, and 1 unused crew token. That scores 9 for coins, 6 for contracts, and 2 for the crew — 17 points total.
+
+A second player had 3 coins, 4 contracts, and no crew: 3 plus 12 plus 0, which is 15. Coins rarely decide a game; contracts usually do.
+
+======================================================================
+Chunk 5  |  source: board_game_strategy_guide.txt#3  |  produced by: chunker.py::fallback_split
+======================================================================
+ins rarely decide a game. If you are choosing between one more sale and one
+more delivery, deliver.
+
+Playing against people who know this
+
+Since the cargo distribution is even — twelve each of five types — counting what
+has already appeared is legitimate and moderately effective late on. Assume an
+experienced opponent is doing it, and assume they can see which contract you are
+setting up for from the types in your hold.
+
+For each one, ask: could someone answer a question using only this,
+without reading what came before or after?
 
 ## Sample Answer
 
