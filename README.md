@@ -38,27 +38,7 @@ are brief or only make sense when compared with the other replies. I tried to ke
 whole thread together preserves that context and prevents useful advice from
 becoming an isolated fragment.
 
-<!-- What about YOUR documents made you pick these numbers? Short posts and
-     long sectioned guides don't want the same chunking, and "800 seemed
-     reasonable" earns nothing. Point at something you noticed when you read
-     the documents in Milestone 1.
-
-     If you changed your mind partway through, say so and say why. That's worth
-     more than pretending you got it right first time.
-
-     Milestone 3. -->
-
 ## Sample Chunks
-
-<!-- Five chunks, pasted as text. Label each one and name the file it came from
-     AND the function that produced it — the grader checks your code against
-     what you claim here.
-
-     `python app.py chunks -n 5` prints all three for you. Copy them straight
-     across.
-
-     Milestone 3. -->
-
 
 ======================================================================
 Chunk 1  |  source: thread_bike_commute.txt#0  |  produced by: chunker.py::split_documents
@@ -135,30 +115,63 @@ Empty office hours is the biggest unused resource here and I say that having was
 
 ## Sample Answer
 
-<!-- One complete question and answer, pasted as text, with the source line
-     visible. Milestone 4. -->
+**Question:** Is it acceptable to attend office hours without a specific question?
 
-**Question:**
-
-**Answer:**
+**Answer:** Yes. It is normal to attend office hours without a specific question;
+you can say that you are following the lectures but do not understand the shape
+of the material, and you can treat office hours as a weekly standing appointment.
+Source: `thread_office_hours_etiquette.txt`.
 
 ```
+THREAD: Is it weird to go to office hours with no specific question?
+
+--- reply 1 (44 votes) ---
+No, and this is the single most common thing first years get wrong. 'I'm
+following the lectures but I don't feel like I understand the shape of it' is a
+completely normal thing to say.
+
+--- reply 3 (18 votes) ---
+If it helps, treat it as a standing appointment. Go every week for a month and
+it stops feeling like a thing.
 ```
 
 **My relevance cutoff:**
 
-<!-- The number you set in config.py, and how you got there.
+I kept `top-k` at 5. I chose a relevance cutoff of `0.70`.
 
-     You ran five questions your corpus covers and the five in OUT_OF_SCOPE
-     that it clearly doesn't, and wrote down the best distance for each. What
-     did those two groups look like? Where was the gap? Put the actual numbers
-     here — the table below wants all ten rows.
+The five questions covered by my documents had best distances between
+`0.2524` and `0.5889`. The five out-of-scope questions had best distances
+between `0.8280` and `0.9517`. This left a clear gap between `0.5889` and
+`0.8280`, so I placed the cutoff at `0.70`.
 
-     Milestone 4. -->
+Lower distances indicate better matches. Questions above `0.70` are refused
+before reaching the model.
+
 
 | Question | In corpus? | Best distance |
 |---|---|---|
-|  |  |  |
+| When should students start looking for a summer internship? | Yes | 0.2670 |
+| Do transfer credits count toward a major? | Yes | 0.2524 |
+| Is it acceptable to attend office hours without a specific question? | Yes | 0.4806 |
+| What are some things students wish they had known during their first year? | Yes | 0.5889 |
+| What should a student do if their roommate situation is not working? | Yes | 0.3292 |
+| What is the capital of Mongolia? | No | 0.948 |
+| How do I change the oil in a diesel engine? | No | 0.930 |
+| Who won the 1994 World Cup? | No | 0.952 |
+| What is the recommended dosage of ibuprofen for a headache? | No | 0.828 |
+| How do I write a for loop in Rust? | No | 0.871 |
+
+### Retrieval observations
+
+I inspected three questions with `python app.py retrieve` and read the returned
+chunks. The internship question returned `thread_internship_timing.txt` first
+at 0.2670, with directly relevant October/November and February/March advice.
+The transfer-credit question returned `thread_transfer_credits.txt` first at
+0.2524, including the case-by-case department decision. The office-hours
+question returned `thread_office_hours_etiquette.txt` first at 0.4806, directly
+answering that attending without a specific question is normal. The later
+results were looser topical neighbors, so five chunks was enough without
+changing `top-k`.
 
 ## How I Used AI
 
