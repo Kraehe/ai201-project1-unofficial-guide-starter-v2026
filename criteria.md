@@ -57,6 +57,7 @@ in at least 4 of 5 tries.
 
 ## 4. Something about your chunks
 
+For at least 4 of 5 sampled chunks, a reader can identify the student’s situation and understand the advice without relying on neighboring chunks.
 <!-- YOU WRITE THIS ONE.
 
      How would you know if your chunks were the right size? Name something
@@ -73,12 +74,14 @@ in at least 4 of 5 tries.
 
 **Why this target:**
 
+Advice threads often contain several replies of different lengths, so splitting in the middle of a reply could remove important context.
 
-
+I chose 4 of 5 because most chunks should stand alone, while one difficult boundary may still be imperfect.
 ---
 
-## 5. Your choice
+## 5. Every source cited is verifiable
 
+For at least 4 of 5 questions, the sources cited in the answers are correct and can be verified.
 <!-- YOU WRITE THIS ONE TOO.
 
      Pick something you actually care about getting right. It could be about
@@ -87,10 +90,8 @@ in at least 4 of 5 tries.
      present — anything, as long as it names a number or an observable
      outcome. -->
 
-
-
 **Why this target:**
-
+I want to make sure that the sources cited are relevant to the question and can be verified, not just present. I chose 4 of 5 because most sources should be correct, while one difficult question may still have an incorrect source.
 
 
 ---
